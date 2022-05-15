@@ -3,3 +3,4 @@
 include/vmlinux.h
 /wiretap
 compile_commands.json
+.idea
