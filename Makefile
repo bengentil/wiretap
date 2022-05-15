@@ -1,9 +1,12 @@
 CLANG ?= clang
 STRIP ?= llvm-strip
 
-LDFLAGS := "-extldflags '-static -L/usr/x86_64-linux-musl/lib64'"
-CFLAGS := -c -O2 -g -Wall -D __TARGET_ARCH_x86 -target bpf -I $(shell pwd)/include $(CFLAGS)
-GO_LDFLAGS := -ldflags=$(LDFLAGS)
+TARGET_X86 := __TARGET_ARCH_x86
+TARGET_ARM64 := __TARGET_ARCH_arm64
+LDFLAGS_X86 := "-extldflags '-static -L/usr/x86_64-linux-musl/lib64'"
+LDFLAGS_ARM64 := "-extldflags '-static -L/usr/aarch64-linux-musl/lib64/'"
+CFLAGS := -c -O2 -g -Wall -D $(TARGET_ARM64) -target bpf -I $(shell pwd)/include $(CFLAGS)
+GO_LDFLAGS := -ldflags=$(LDFLAGS_ARM64)
 
 all: wiretap compile_commands.json
 
