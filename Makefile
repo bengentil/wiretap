@@ -32,6 +32,7 @@ compile_commands.json:
 
 clean:
 	rm  wiretap \
+		*.o \
 		compile_commands.json \
 		include/vmlinux.h \
 		pkg/probe/*/*.o \
