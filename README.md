@@ -17,7 +17,7 @@ without:
 
 Exploit openssl, capture keys, decrypt captured TLS data, give access to data that you don't already own.
 
-## Usage
+## Usage
 
 ```
 wiretap [-o=<output>] [<probe...>]
